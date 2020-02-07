@@ -1,0 +1,17 @@
+<svg:g>
+  <g #background [attr.transform]="swatchBackgroundAdjust">
+    <rect *ngIf="holdForBackground"
+      [attr.transform]="backgroundPaddingAdjust"
+      [attr.width]="backgroundWidth"
+      [attr.height]="backgroundHeight"
+      [attr.fill]="getStyleProp('legend.grid.backgroundFill')"
+      [attr.stroke]="getStyleProp('legend.grid.stroke')"
+      [attr.stroke-width]="getStyleProp('legend.grid.strokeWidth')"
+      [attr.rx]="getStyleProp('legend.grid.borderRadius')"
+      [attr.ry]="getStyleProp('legend.grid.borderRadius')"/>
+  </g>
+  <g #content
+    [attr.transform]="contentPaddingAdjust">
+    <ng-content></ng-content>
+  </g>
+</svg:g>

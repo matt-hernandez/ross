@@ -1,0 +1,23 @@
+<svg:g>
+  <defs>
+    <clipPath [attr.id]="'idean-clip-bar-' + id">
+      <rect role="presentation"
+        shape-rendering="auto"
+        vector-effect="non-scaling-stroke"
+        [attr.x]="container.left"
+        [attr.y]="container.top"
+        [attr.width]="container.width"
+        [attr.height]="container.height"></rect>
+    </clipPath>
+  </defs>
+  <g [attr.clip-path]="'url(#idean-clip-bar-' + id + ')'">
+    <g *ngFor="let bar of _dataRender; trackBy: trackByFn"
+      i-ng-single-bar
+      [style]="resolveStyle"
+      [datum]="bar"
+      [spread]="spread"
+      [visualizerTypeIndex]="visualizerTypeIndex"
+      [visualizerTypeLength]="visualizerTypeLength"
+      [animate]="animate"></g>
+  </g>
+</svg:g>

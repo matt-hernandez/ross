@@ -1,0 +1,21 @@
+<svg:g [@iNgExit]="{value: ':leave', params: { exit_time: exitTime } }">
+  <defs>
+    <clipPath [attr.id]="'idean-clip-area-' + id">
+      <rect role="presentation"
+        shape-rendering="auto"
+        vector-effect="non-scaling-stroke"
+        [attr.x]="container.left"
+        [attr.y]="container.top"
+        [attr.width]="container.width"
+        [attr.height]="container.height"></rect>
+    </clipPath>
+  </defs>
+  <g [attr.clip-path]="'url(#idean-clip-area-' + id + ')'">
+    <path #areaEl *ngIf="_dataRender"
+      class="data-area"
+      shape-rendering="auto"
+      role="presentation"
+      [attr.d]="d"
+      [attr.fill]="fill"></path>
+  </g>
+</svg:g>

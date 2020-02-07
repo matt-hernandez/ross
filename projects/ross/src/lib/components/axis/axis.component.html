@@ -1,0 +1,29 @@
+<svg:g>
+  <text *ngIf="labelText"
+    [attr.text-anchor]="getStyleProp('axis.axis.label.textAnchor')"
+    [attr.font-family]="getStyleProp('axis.axis.label.fontFamily')"
+    [attr.x]="axisLabelXPosition"
+    [attr.y]="axisLabelYPosition"
+    [attr.transform]="axisLabelRotation">{{ labelText }}</text> <!-- Gotta keep this outside. -->
+  <g [attr.transform]="axisTranslate">
+    <line
+      [attr.stroke]="getStyleProp('axis.axis.stroke')"
+      [attr.stroke-width]="getStyleProp('axis.axis.strokeWidth')"
+      [attr.stroke-linecap]="getStyleProp('axis.axis.strokeLinecap')"
+      [attr.stroke-linejoin]="getStyleProp('axis.axis.strokeLinejoin')"
+      [attr.x2]="axisX2"
+      [attr.y2]="axisY2"></line>
+    <g
+      *ngFor="let tick of generateTicks(); index as i"
+      i-ng-axis-tick
+      [style]="style"
+      [side]="side"
+      [scale]="scale"
+      [tick]="tick"
+      [tickFormat]="tickFormat"
+      [tickValues]="tickValues"
+      [index]="i"
+    >
+    </g>
+  </g>
+</svg:g>

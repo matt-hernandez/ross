@@ -1,0 +1,30 @@
+<svg:g #container
+  [attr.transform]="containerPosition">
+  <g #background [attr.transform]="swatchBackgroundAdjust">
+    <rect *ngIf="holdForBackground"
+      [attr.fill]="getStyleProp('legend.swatch.backgroundFill')"
+      [attr.stroke-width]="getStyleProp('legend.swatch.strokeWidth')"
+      [attr.stroke]="getStyleProp('legend.swatch.stroke')"
+      [attr.transform]="backgroundPaddingAdjust"
+      [attr.width]="backgroundWidth"
+      [attr.height]="backgroundHeight"
+      [attr.rx]="getStyleProp('legend.swatch.borderRadius')"
+      [attr.ry]="getStyleProp('legend.swatch.borderRadius')"/>
+  </g>
+  <g #content
+    [attr.transform]="contentPaddingAdjust">
+    <g #symbolContainer>
+      <g #symbol><ng-content select="[i-ng-legend-swatch-symbol]"></ng-content></g>
+      <rect *ngIf="symbol.children.length === 0"
+        x="0"
+        y="0"
+        [attr.width]="getStyleProp('legend.swatch.symbol.width')"
+        [attr.height]="getStyleProp('legend.swatch.symbol.height')"
+        [attr.fill]="getStyleProp('legend.swatch.symbol.fill')" />
+    </g>
+    <text
+      [attr.transform]="labelAlignment"
+      [attr.font-size]="getStyleProp('legend.swatch.label.fontSize')"
+      [attr.font-family]="getStyleProp('legend.swatch.label.fontFamily')">{{label}}</text>
+  </g>
+</svg:g>

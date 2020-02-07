@@ -1,0 +1,25 @@
+<svg:g [@iNgExit]="{value: ':leave', params: { exit_time: exitTime } }">
+  <defs>
+    <clipPath [attr.id]="'idean-clip-line-' + id">
+      <rect role="presentation"
+        shape-rendering="auto"
+        vector-effect="non-scaling-stroke"
+        [attr.x]="container.left"
+        [attr.y]="container.top"
+        [attr.width]="container.width"
+        [attr.height]="container.height"></rect>
+    </clipPath>
+  </defs>
+  <g [attr.clip-path]="'url(#idean-clip-line-' + id + ')'">
+    <path #lineEl *ngIf="_dataRender"
+      class="data-line"
+      shape-rendering="auto"
+      role="presentation"
+      fill="transparent"
+      [attr.stroke-dasharray]="strokeDasharray"
+      [attr.stroke-dashoffset]="strokeDashoffset"
+      [attr.stroke-width]="getStyleProp('line.data.strokeWidth')"
+      [attr.stroke]="getStyleProp('line.data.stroke')"
+      [attr.d]="d"></path>
+  </g>
+</svg:g>

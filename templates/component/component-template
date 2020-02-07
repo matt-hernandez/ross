@@ -1,0 +1,19 @@
+import { Component, Optional, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChartComponent } from '../chart/chart.component';
+import { ChartContainerComponent } from '../chart-container/chart-container.component';
+import { BaseChartComponent } from '../../util/interfaces/class-interfaces/base-chart-component';
+import { ContentContainer } from '../../util/abstract-classes/content-container';
+/* MIXINS */
+@Component({
+  selector: 'g[i-ng-component-template]',
+  templateUrl: './component-template.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class ComponentTemplateComponent/* EXTENDS *//* IMPLEMENTS */ {
+  container: ContentContainer;/* PROPERTIES */
+  constructor(public chart: ChartComponent, @Optional() chartContainer: ChartContainerComponent) {/* SUPER */
+    this.container = chartContainer || chart;
+  }
+
+  ngOnInit(): void {}
+}

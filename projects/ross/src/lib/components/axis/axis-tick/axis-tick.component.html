@@ -1,0 +1,19 @@
+<svg:g
+  #animatingNode
+  [attr.font-family]="getStyleProp('axis.ticks.labels.fontFamily', tick, index)"
+  [attr.transform]="transform">
+  <line
+    [attr.stroke]="getStyleProp('axis.ticks.stroke', tick, index)"
+    [attr.x2]="tickX2"
+    [attr.y2]="tickY2"
+  ></line>
+  <text
+    [attr.fill]="getStyleProp('axis.ticks.labels.fill', tick, index)"
+    [attr.font-size]="getStyleProp('axis.ticks.labels.fontSize', tick, index)"
+    [attr.dy]="tickLabelDy"
+    [attr.dx]="tickLabelDx"
+    [attr.text-anchor]="tickLabelTextAnchor"
+    >
+    {{ formattedTick }}
+  </text>
+</svg:g>

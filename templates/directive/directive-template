@@ -1,0 +1,9 @@
+import { Directive } from '@angular/core';
+
+@Directive({
+  selector: '[iNgDirectiveTemplate]'
+})
+export class DirectiveTemplateDirective {
+
+  constructor() { }
+}

@@ -1,0 +1,16 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ComponentTemplateComponent } from './component-template.component';
+
+@NgModule({
+  imports: [
+    CommonModule
+  ],
+  declarations: [
+    ComponentTemplateComponent,
+  ],
+  exports: [
+    ComponentTemplateComponent,
+  ]
+})
+export class ComponentTemplateComponentModule { }

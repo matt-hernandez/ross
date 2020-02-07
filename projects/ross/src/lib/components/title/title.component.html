@@ -1,0 +1,8 @@
+<svg:g [attr.transform]="anchorPosition">
+  <text
+    [attr.transform]="furtherOffset"
+    [attr.text-anchor]="textAlign"
+    [attr.font-family]="getStyleProp('title.fontFamily')"
+    [attr.font-size]="getStyleProp('title.fontSize')"
+    [attr.dy]="yPadding">{{ text }}</text>
+</svg:g>

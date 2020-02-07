@@ -1,0 +1,18 @@
+<svg:g #container
+  [attr.transform]="containerPosition">
+  <g #background [attr.transform]="swatchBackgroundAdjust">
+    <rect *ngIf="holdForBackground"
+      [attr.fill]="getStyleProp('legend.section.backgroundFill')"
+      [attr.stroke-width]="getStyleProp('legend.section.strokeWidth')"
+      [attr.stroke]="getStyleProp('legend.section.stroke')"
+      [attr.transform]="backgroundPaddingAdjust"
+      [attr.width]="backgroundWidth"
+      [attr.height]="backgroundHeight"
+      [attr.rx]="getStyleProp('legend.section.borderRadius')"
+      [attr.ry]="getStyleProp('legend.section.borderRadius')"/>
+  </g>
+  <g #content
+    [attr.transform]="contentPaddingAdjust">
+    <ng-content></ng-content>
+  </g>
+</svg:g>

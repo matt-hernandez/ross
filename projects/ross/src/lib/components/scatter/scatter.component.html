@@ -1,0 +1,8 @@
+<svg:g>
+  <g *ngFor="let point of _dataRender; trackBy: trackByFn"
+    i-ng-scatter-point
+    [style]="resolveStyle"
+    [datum]="point"
+    [pointShape]="pointShape"
+    [animate]="animate"></g>
+</svg:g>

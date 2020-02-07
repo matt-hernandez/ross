@@ -1,0 +1,35 @@
+<svg:g #container
+  [attr.transform]="anchorPosition">
+  <g [attr.transform]="alignmentOffset">
+    <g [attr.transform]="furtherOffset">
+      <g [attr.transform]="titleBackgroundAdjust">
+        <rect *ngIf="holdForBackground"
+          [attr.transform]="backgroundPaddingAdjust"
+          [attr.width]="backgroundWidth"
+          [attr.height]="backgroundHeight"
+          [attr.fill]="getStyleProp('legend.legend.backgroundFill')"
+          [attr.stroke]="getStyleProp('legend.legend.stroke')"
+          [attr.stroke-width]="getStyleProp('legend.legend.strokeWidth')"
+          [attr.rx]="getStyleProp('legend.legend.borderRadius')"
+          [attr.ry]="getStyleProp('legend.legend.borderRadius')"/>
+      </g>
+      <g #legendContent
+        [attr.transform]="contentPaddingAdjust">
+        <g [attr.transform]="titleAlignmentAdjust">
+          <g #titleElement
+            [attr.transform]="titleTransform">
+            <text
+              *ngIf="holdForTitle"
+              [attr.transform]="titleFurtherOffset"
+              [attr.text-anchor]="titleTextAnchor"
+              [attr.font-family]="getStyleProp('legend.legend.title.fontFamily')">{{title}}</text>
+          </g>
+          <g #legendSwatchesContent
+            [attr.transform]="contentTransform">
+            <ng-content></ng-content>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg:g>

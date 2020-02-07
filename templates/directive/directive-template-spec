@@ -1,0 +1,8 @@
+import { DirectiveTemplateDirective } from './directive-template.directive';
+
+describe('DirectiveTemplateDirective', () => {
+  it('should create an instance', () => {
+    const directive = new DirectiveTemplateDirective();
+    expect(directive).toBeTruthy();
+  });
+});

@@ -1,0 +1,17 @@
+{
+  "name": "ross",
+  "version": "0.0.1",
+  "dependencies": {
+    "d3-array": "^1.2.1",
+    "d3-ease": "^1.0.3",
+    "d3-interpolate": "^1.2.0",
+    "d3-interpolate-path": "^2.0.1",
+    "d3-scale": "^2.0.0",
+    "d3-shape": "^1.2.0",
+    "ramda": "^0.25.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+import { TestBed, inject } from '@angular/core/testing';
+
+import { ServiceTemplateService } from './example.service';
+
+describe('ServiceTemplateService', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [ServiceTemplateService]
+    });
+  });
+
+  it('should be created', inject([ServiceTemplateService], (service: ServiceTemplateService) => {
+    expect(service).toBeTruthy();
+  }));
+});

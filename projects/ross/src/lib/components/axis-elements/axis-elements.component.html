@@ -1,0 +1,41 @@
+<svg:g>
+  <ng-container *ngIf="type === 'bars'">
+    <g *ngIf="shouldHaveBeginningBar"
+      i-ng-axis-bar
+      [alignment]="barAlignment"
+      [startValue]="0"
+      [endValue]="scale(ticks[0])"
+      [index]="0"
+      [axisType]="axis.axisType"
+      [style]="getStyleProp('axisElements.bars')"
+    ></g>
+    <g *ngFor="let tick of ticks; index as i; trackBy: barTrackBy"
+      i-ng-axis-bar
+      [alignment]="barAlignment"
+      [startValue]="resolveBarStartValue(i)"
+      [tickValue]="tick"
+      [endValue]="resolveBarEndValue(i)"
+      [index]="i + 1"
+      [axisType]="axis.axisType"
+      [style]="getStyleProp('axisElements.bars')"
+    ></g>
+  </ng-container>
+  <ng-container *ngIf="type === 'grid'">
+    <g *ngFor="let tick of ticks;"
+      i-ng-axis-grid
+      [x]="getGridX(tick)"
+      [y]="getGridY(tick)"
+      [axisType]="axis.axisType"
+      [style]="getStyleProp('axisElements.grid')"
+    ></g>
+  </ng-container>
+  <ng-container *ngIf="type === 'crossSection'">
+    <g *ngFor="let point of unifiedPoints;"
+      i-ng-axis-cross-section
+      [x]="getCrossSectionX(point)"
+      [y]="getCrossSectionY(point)"
+      [axisType]="axis.axisType"
+      [style]="getStyleProp('axisElements.crossSection')"
+    ></g>
+  </ng-container>
+</svg:g>
